@@ -1,4 +1,4 @@
-#!/usr/bin/env
+#!/bin/bash
 
 # Quick Setup Script (Linux / macOS)
 
@@ -14,24 +14,6 @@ YELLOW="\033[0;33m"
 CYAN="\033[0;36m"
 GREEN="\033[0;32m"
 RESET="\033[0m"
-
-# Check for Python 3
-if ! command -v python3 &> /dev/null; then
-    echo -e "${RED}Python 3 is not installed or not in PATH. Install Python 3.7+ and ensure 'python3' is available.${RESET}"
-    exit 1
-else
-    PYTHON_VERSION=$(python3 --version 2>&1)
-    echo -e "${GREEN}Found ${PYTHON_VERSION}.${RESET}"
-fi
-
-# Check for pip (using python3 -m pip)
-if ! python3 -m pip --version &> /dev/null; then
-    echo -e "${RED}pip is not available. Reinstall Python 3 with pip included or install pip manually.${RESET}"
-    exit 1
-else
-    PIP_VERSION=$(python3 -m pip --version 2>&1)
-    echo -e "${GREEN}Found ${PIP_VERSION}.${RESET}"
-fi
 
 # Create a local Python virtual environment (if it doesn't already exist)
 if [ -d "venv" ]; then
