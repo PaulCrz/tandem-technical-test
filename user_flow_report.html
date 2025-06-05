@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Flow Analysis Report</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .header p {
+            margin: 10px 0 0 0;
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        .section {
+            background: white;
+            margin: 20px 0;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .flow-item, .anomaly-item {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .anomaly-item {
+            border-left-color: #e74c3c;
+        }
+        .anomaly-item.high {
+            border-left-color: #c0392b;
+            background: #fdf2f2;
+        }
+        .anomaly-item.medium {
+            border-left-color: #f39c12;
+            background: #fef9e7;
+        }
+        .flow-title, .anomaly-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        .flow-description, .anomaly-description {
+            color: #7f8c8d;
+            margin-bottom: 15px;
+        }
+        .details {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .metric {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-weight: bold;
+        }
+        .metric.success { background: #27ae60; }
+        .metric.warning { background: #f39c12; }
+        .metric.danger { background: #e74c3c; }
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .summary-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .summary-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+        }
+        .summary-label {
+            color: #7f8c8d;
+            font-size: 1.1em;
+        }
+        .page-section {
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border-left: 3px solid #667eea;
+        }
+        .page-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .timestamp {
+            color: #95a5a6;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>User Flow Analysis Report</h1>
+        <p>Generated on 2025-06-05 13:15:49</p>
+    </div>
+
+    <div class="summary">
+        <div class="summary-card">
+            <div class="summary-number">11</div>
+            <div class="summary-label">Unique Users</div>
+        </div>
+        <div class="summary-card">
+            <div class="summary-number">30</div>
+            <div class="summary-label">Total Sessions</div>
+        </div>
+        <div class="summary-card">
+            <div class="summary-number">2.7</div>
+            <div class="summary-label">Avg Sessions/User</div>
+        </div>
+        <div class="summary-card">
+            <div class="summary-number">243</div>
+            <div class="summary-label">Total Events</div>
+        </div>
+        <div class="summary-card">
+            <div class="summary-number">2</div>
+            <div class="summary-label">Anomalies Detected</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📊 Meaningful User Flows</h2>
+        
+            <div class="flow-item">
+                <div class="flow-title">Successful Purchase Flows</div>
+                <div class="flow-description">Found 12 successful checkout sessions</div>
+                <div class="details">
+                    <span class='metric '>Total Successful: 12</span><strong>Most Common Patterns:</strong><div style='margin: 15px 0;'><div style='margin: 10px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #27ae60;'><div style='display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 8px;'><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/settings</span><span style='color: #7f8c8d; font-weight: bold; margin: 0 4px;'>→</span><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/settings</span><span style='color: #7f8c8d; font-weight: bold; margin: 0 4px;'>→</span><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/promo</span><span style='color: #7f8c8d; font-weight: bold; margin: 0 4px;'>→</span><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/</span><span style='color: #7f8c8d; font-weight: bold; margin: 0 4px;'>→</span><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/</span><span style='color: #7f8c8d; font-weight: bold; margin: 0 4px;'>→</span><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/products</span><span style='color: #7f8c8d; font-weight: bold; margin: 0 4px;'>→</span><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/products/laptop-pro</span><span style='color: #7f8c8d; font-weight: bold; margin: 0 4px;'>→</span><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/products/laptop-pro</span><span style='color: #7f8c8d; font-weight: bold; margin: 0 4px;'>→</span><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/products/laptop-pro</span><span style='color: #7f8c8d; font-weight: bold; margin: 0 4px;'>→</span><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/cart</span><span style='color: #7f8c8d; font-weight: bold; margin: 0 4px;'>→</span><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/checkout</span><span style='color: #7f8c8d; font-weight: bold; margin: 0 4px;'>→</span><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/checkout</span><span style='color: #7f8c8d; font-weight: bold; margin: 0 4px;'>→</span><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/checkout</span></div><div style='text-align: right;'><span class='metric success'>1 completions</span></div></div><div style='margin: 10px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #27ae60;'><div style='display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 8px;'><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/checkout</span><span style='color: #7f8c8d; font-weight: bold; margin: 0 4px;'>→</span><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/checkout</span><span style='color: #7f8c8d; font-weight: bold; margin: 0 4px;'>→</span><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/checkout</span><span style='color: #7f8c8d; font-weight: bold; margin: 0 4px;'>→</span><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/</span><span style='color: #7f8c8d; font-weight: bold; margin: 0 4px;'>→</span><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/</span><span style='color: #7f8c8d; font-weight: bold; margin: 0 4px;'>→</span><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/products</span><span style='color: #7f8c8d; font-weight: bold; margin: 0 4px;'>→</span><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/products/wireless-headphones</span><span style='color: #7f8c8d; font-weight: bold; margin: 0 4px;'>→</span><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/products/wireless-headphones</span><span style='color: #7f8c8d; font-weight: bold; margin: 0 4px;'>→</span><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/cart</span><span style='color: #7f8c8d; font-weight: bold; margin: 0 4px;'>→</span><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/checkout</span><span style='color: #7f8c8d; font-weight: bold; margin: 0 4px;'>→</span><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/checkout</span></div><div style='text-align: right;'><span class='metric success'>1 completions</span></div></div><div style='margin: 10px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #27ae60;'><div style='display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 8px;'><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/blog</span><span style='color: #7f8c8d; font-weight: bold; margin: 0 4px;'>→</span><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/blog</span><span style='color: #7f8c8d; font-weight: bold; margin: 0 4px;'>→</span><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/blog</span><span style='color: #7f8c8d; font-weight: bold; margin: 0 4px;'>→</span><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/</span><span style='color: #7f8c8d; font-weight: bold; margin: 0 4px;'>→</span><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/</span><span style='color: #7f8c8d; font-weight: bold; margin: 0 4px;'>→</span><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/products</span><span style='color: #7f8c8d; font-weight: bold; margin: 0 4px;'>→</span><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/products/smart-watch</span><span style='color: #7f8c8d; font-weight: bold; margin: 0 4px;'>→</span><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/cart</span><span style='color: #7f8c8d; font-weight: bold; margin: 0 4px;'>→</span><span style='background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500;'>/checkout</span></div><div style='text-align: right;'><span class='metric success'>1 completions</span></div></div></div><span class='metric success'>Conversion Rate: 40.0%</span>
+                </div>
+            </div>
+            
+            <div class="flow-item">
+                <div class="flow-title">Flow Abandonment Patterns</div>
+                <div class="flow-description">Analyzed 18 abandoned sessions</div>
+                <div class="details">
+                    <span class='metric '>Total Abandoned: 18</span><strong>Common Exit Points:</strong><ul><li>/checkout <span class='metric warning'>9 exits</span></li><li>/account <span class='metric warning'>5 exits</span></li><li>/cart <span class='metric warning'>2 exits</span></li><li>/random <span class='metric warning'>2 exits</span></li></ul><span class='metric warning'>Abandonment Rate: 60.0%</span>
+                </div>
+            </div>
+            
+            <div class="flow-item">
+                <div class="flow-title">User Entry Points</div>
+                <div class="flow-description">Most common starting pages for user sessions</div>
+                <div class="details">
+                    <strong>Top Entry Points:</strong><ul><li>/ <span class='metric success'>7 entries</span></li><li>/settings <span class='metric success'>6 entries</span></li><li>/blog <span class='metric success'>4 entries</span></li><li>/checkout <span class='metric success'>2 entries</span></li><li>/help <span class='metric success'>2 entries</span></li></ul>
+                </div>
+            </div>
+            
+            <div class="flow-item">
+                <div class="flow-title">Most Consulted Products</div>
+                <div class="flow-description">Analysis of products viewed across 28 user sessions</div>
+                <div class="details">
+                    <span class='metric '>Total Product Sessions: 28</span><span class='metric '>Unique Products: 24</span><strong>Top Products:</strong><ul><li>/products/wi-fi-router <span class='metric success'>3 views</span></li><li>/products/wireless-printer <span class='metric success'>3 views</span></li><li>/products/laptop-pro <span class='metric success'>1 views</span></li><li>/products/smartphone-x <span class='metric success'>1 views</span></li><li>/products/wireless-headphones <span class='metric success'>1 views</span></li><li>/products/smart-tv-55 <span class='metric success'>1 views</span></li><li>/products/tablet-z <span class='metric success'>1 views</span></li><li>/products/smart-watch <span class='metric success'>1 views</span></li><li>/products/phone-case <span class='metric success'>1 views</span></li><li>/products/dslr-camera <span class='metric success'>1 views</span></li></ul>
+                </div>
+            </div>
+            
+            <div class="flow-item">
+                <div class="flow-title">Pages with Longest Activity</div>
+                <div class="flow-description">Analysis of user time spent on 36 different pages</div>
+                <div class="details">
+                    <span class='metric '>Total Pages Analyzed: 36</span><strong>Longest Activity Pages:</strong><ul><li>/products/bluetooth-speaker <span class='metric warning'>8.0s</span></li><li>/products/gaming-console <span class='metric warning'>7.0s</span></li><li>/products/wireless-headphones <span class='metric warning'>6.0s</span></li><li>/products/mechanical-keyboard <span class='metric warning'>6.0s</span></li><li>/products/new-model-phone <span class='metric warning'>6.0s</span></li><li>/promo <span class='metric warning'>5.8s</span></li><li>/products/laptop-pro <span class='metric warning'>5.7s</span></li><li>/login <span class='metric warning'>5.7s</span></li><li>/products/headphones-xyz <span class='metric warning'>5.3s</span></li><li>/products/portable-speaker <span class='metric warning'>5.3s</span></li></ul><span class='metric '>Average Page Time: 4.9s</span>
+                </div>
+            </div>
+            
+    </div>
+
+    <div class="section">
+        <h2>🚨 Detected Anomalies</h2>
+        
+            <div class="anomaly-item high">
+                <div class="anomaly-title">Technical Errors</div>
+                <div class="anomaly-description">Found 13 events with error-related keywords</div>
+                <div class="details">
+                    <span class='metric'>Total Errors: 13</span><strong>Errors by Page:</strong>
+                    <div class="page-section">
+                        <div class="page-title">/checkout (9 errors)</div>
+                        <ul>
+                    <li>'Payment declined': 2 occurrences</li><li>'Payment gateway timeout': 1 occurrences</li><li>'No items in cart': 1 occurrences</li></ul></div>
+                    <div class="page-section">
+                        <div class="page-title">/faq (2 errors)</div>
+                        <ul>
+                    <li>'No answer available': 2 occurrences</li></ul></div>
+                    <div class="page-section">
+                        <div class="page-title">/settings (1 errors)</div>
+                        <ul>
+                    <li>'Unable to update preferences': 1 occurrences</li></ul></div>
+                    <div class="page-section">
+                        <div class="page-title">/random (1 errors)</div>
+                        <ul>
+                    <li>'No results': 1 occurrences</li></ul></div>
+                </div>
+            </div>
+            
+            <div class="anomaly-item medium">
+                <div class="anomaly-title">Unusual Session Activity</div>
+                <div class="anomaly-description">Found 2 sessions with unusually high activity</div>
+                <div class="details">
+                    <span class='metric'>Average Session Length: 8.1 events</span><span class='metric'>Threshold: 12.8 events</span>
+                </div>
+            </div>
+            
+    </div>
+</body>
+</html>
+        
